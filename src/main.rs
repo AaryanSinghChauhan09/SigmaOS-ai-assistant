@@ -1,10 +1,22 @@
-//! SigmaOS-ai-assistant - SigmaOS Component
+mod config;
+mod error;
+mod service;
 
+use config::Config;
+use service::Service;
 use anyhow::Result;
 
 fn main() -> Result<()> {
     env_logger::init();
-    log::info!("Starting SigmaOS-ai-assistant");
-    println!("SigmaOS SigmaOS-ai-assistant v0.1.0");
+    
+    let config = Config::default();
+    let mut service = Service::new(config);
+    
+    service.start()?;
+    println!("Service started successfully");
+    
+    service.stop()?;
+    println!("Service stopped successfully");
+    
     Ok(())
 }
