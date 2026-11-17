@@ -3,7 +3,7 @@ name = "SigmaOS-ai-assistant"
 tier = 2
 stability = "scaffold"
 language = "rust"
-description = "ai-assistant component"
+description = "No GitHub description is set; component scope remains unclassified."
 upstream = []
 
 [contract]
